@@ -1,0 +1,280 @@
+Backend :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Shop Order</title>
+    <script>
+        async function submitOrder() {
+            // Get the user inputs
+            const order_legs = parseInt(document.getElementById("order_legs").value);
+            const order_wings = parseInt(document.getElementById("order_wings").value);
+            const order_flesh = parseInt(document.getElementById("order_flesh").value);
+
+            const orderData = {
+                order_legs: order_legs,
+                order_wings: order_wings,
+                order_flesh_portions: order_flesh
+            };
+
+            try {
+                // Send a POST request to the Flask backend
+                const response = await fetch('http://127.0.0.1:5000/process_order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+
+                // If successful, display results
+                if (response.ok) {
+                    document.getElementById("result").innerHTML = `
+                        <h3>Order Summary:</h3>
+                        <p>Total weight of the customer's order: ${result.order_weight} grams</p>
+                        <p>Number of whole chickens needed: ${result.chickens_needed}</p>
+                        <h3>Remaining Inventory:</h3>
+                        <p>Legs: ${result.remaining_inventory.legs} (Total weight: ${result.remaining_inventory.legs * 250} grams)</p>
+                        <p>Wings: ${result.remaining_inventory.wings} (Total weight: ${result.remaining_inventory.wings * 250} grams)</p>
+                        <p>Flesh portions: ${result.remaining_inventory.flesh_portions} (Total weight: ${result.remaining_inventory.flesh_portions * 1000} grams)</p>
+                        <p>Total weight of remaining inventory: ${result.remaining_inventory_weight} grams</p>
+                    `;
+                } else {
+                    document.getElementById("result").innerHTML = <p style="color: red;">Error: ${result.error}</p>;
+                }
+            } catch (error) {
+                document.getElementById("result").innerHTML = <p style="color: red;">Network error: ${error.message}</p>;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Poultry Shop Order</h1>
+    <div>
+        <label for="order_legs">Legs (number):</label>
+        <input type="number" id="order_legs" min="0">
+    </div>
+    <div>
+        <label for="order_wings">Wings (number):</label>
+        <input type="number" id="order_wings" min="0">
+    </div>
+    <div>
+        <label for="order_flesh">Flesh Portions (number):</label>
+        <input type="number" id="order_flesh" min="0">
+    </div>
+    <button onclick="submitOrder()">Submit Order</button>
+    <div id="result"></div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Shop Order</title>
+    <script>
+        async function submitOrder() {
+            // Get the user inputs
+            const order_legs = parseInt(document.getElementById("order_legs").value);
+            const order_wings = parseInt(document.getElementById("order_wings").value);
+            const order_flesh = parseInt(document.getElementById("order_flesh").value);
+
+            const orderData = {
+                order_legs: order_legs,
+                order_wings: order_wings,
+                order_flesh_portions: order_flesh
+            };
+
+            try {
+                // Send a POST request to the Flask backend
+                const response = await fetch('http://127.0.0.1:5000/process_order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+
+                // If successful, display results
+                if (response.ok) {
+                    document.getElementById("result").innerHTML = `
+                        <h3>Order Summary:</h3>
+                        <p>Total weight of the customer's order: ${result.order_weight} grams</p>
+                        <p>Number of whole chickens needed: ${result.chickens_needed}</p>
+                        <h3>Remaining Inventory:</h3>
+                        <p>Legs: ${result.remaining_inventory.legs} (Total weight: ${result.remaining_inventory.legs * 250} grams)</p>
+                        <p>Wings: ${result.remaining_inventory.wings} (Total weight: ${result.remaining_inventory.wings * 250} grams)</p>
+                        <p>Flesh portions: ${result.remaining_inventory.flesh_portions} (Total weight: ${result.remaining_inventory.flesh_portions * 1000} grams)</p>
+                        <p>Total weight of remaining inventory: ${result.remaining_inventory_weight} grams</p>
+                    `;
+                } else {
+                    document.getElementById("result").innerHTML = <p style="color: red;">Error: ${result.error}</p>;
+                }
+            } catch (error) {
+                document.getElementById("result").innerHTML = <p style="color: red;">Network error: ${error.message}</p>;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Poultry Shop Order</h1>
+    <div>
+        <label for="order_legs">Legs (number):</label>
+        <input type="number" id="order_legs" min="0">
+    </div>
+    <div>
+        <label for="order_wings">Wings (number):</label>
+        <input type="number" id="order_wings" min="0">
+    </div>
+    <div>
+        <label for="order_flesh">Flesh Portions (number):</label>
+        <input type="number" id="order_flesh" min="0">
+    </div>
+    <button onclick="submitOrder()">Submit Order</button>
+    <div id="result"></div>
+</body>
+</html>
+v<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Shop Order</title>
+    <script>
+        async function submitOrder() {
+            // Get the user inputs
+            const order_legs = parseInt(document.getElementById("order_legs").value);
+            const order_wings = parseInt(document.getElementById("order_wings").value);
+            const order_flesh = parseInt(document.getElementById("order_flesh").value);
+
+            const orderData = {
+                order_legs: order_legs,
+                order_wings: order_wings,
+                order_flesh_portions: order_flesh
+            };
+
+            try {
+                // Send a POST request to the Flask backend
+                const response = await fetch('http://127.0.0.1:5000/process_order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+
+                // If successful, display results
+                if (response.ok) {
+                    document.getElementById("result").innerHTML = `
+                        <h3>Order Summary:</h3>
+                        <p>Total weight of the customer's order: ${result.order_weight} grams</p>
+                        <p>Number of whole chickens needed: ${result.chickens_needed}</p>
+                        <h3>Remaining Inventory:</h3>
+                        <p>Legs: ${result.remaining_inventory.legs} (Total weight: ${result.remaining_inventory.legs * 250} grams)</p>
+                        <p>Wings: ${result.remaining_inventory.wings} (Total weight: ${result.remaining_inventory.wings * 250} grams)</p>
+                        <p>Flesh portions: ${result.remaining_inventory.flesh_portions} (Total weight: ${result.remaining_inventory.flesh_portions * 1000} grams)</p>
+                        <p>Total weight of remaining inventory: ${result.remaining_inventory_weight} grams</p>
+                    `;
+                } else {
+                    document.getElementById("result").innerHTML = <p style="color: red;">Error: ${result.error}</p>;
+                }
+            } catch (error) {
+                document.getElementById("result").innerHTML = <p style="color: red;">Network error: ${error.message}</p>;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Poultry Shop Order</h1>
+    <div>
+        <label for="order_legs">Legs (number):</label>
+        <input type="number" id="order_legs" min="0">
+    </div>
+    <div>
+        <label for="order_wings">Wings (number):</label>
+        <input type="number" id="order_wings" min="0">
+    </div>
+    <div>
+        <label for="order_flesh">Flesh Portions (number):</label>
+        <input type="number" id="order_flesh" min="0">
+    </div>
+    <button onclick="submitOrder()">Submit Order</button>
+    <div id="result"></div>
+</body>
+</html>
+
+
+FRONT END :
+
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(_name_)
+CORS(app)
+
+# Define the initial inventory
+initial_inventory = {
+    "legs": 20 * 2,          # 2 legs per chicken, 20 chickens
+    "wings": 20 * 2,         # 2 wings per chicken, 20 chickens
+    "flesh_portions": 20,    # 1 flesh portion per chicken, 20 chickens
+    "total_weight": 20 * 2 * 1000  # Total weight of 20 chickens (each 2 kg)
+}
+
+# Function to process the order
+@app.route('/process_order', methods=['POST'])
+def process_order():
+    # Get data from the request
+    order_data = request.get_json()
+    order_legs = order_data.get('order_legs', 0)
+    order_wings = order_data.get('order_wings', 0)
+    order_flesh = order_data.get('order_flesh_portions', 0)
+    
+    # Calculate required number of chickens
+    total_legs_needed = order_legs
+    total_wings_needed = order_wings
+    total_flesh_needed = order_flesh
+    
+    # Check if inventory is sufficient
+    if (total_legs_needed > initial_inventory["legs"] or
+        total_wings_needed > initial_inventory["wings"] or
+        total_flesh_needed > initial_inventory["flesh_portions"]):
+        return jsonify({"error": "Insufficient inventory to fulfill the order"}), 400
+    
+    # Calculate total weight of the customer's order
+    order_weight = (total_legs_needed * 250) + (total_wings_needed * 250) + (total_flesh_needed * 1000)
+    
+    # Calculate the number of chickens needed
+    chickens_needed = max(
+        (total_legs_needed + 1) // 2, 
+        (total_wings_needed + 1) // 2, 
+        total_flesh_needed
+    )
+    
+    # Update remaining inventory
+    remaining_inventory = {
+        "legs": initial_inventory["legs"] - total_legs_needed,
+        "wings": initial_inventory["wings"] - total_wings_needed,
+        "flesh_portions": initial_inventory["flesh_portions"] - total_flesh_needed
+    }
+    
+    # Calculate the total weight of the remaining inventory
+    remaining_inventory_weight = (remaining_inventory["legs"] * 250) + (remaining_inventory["wings"] * 250) + (remaining_inventory["flesh_portions"] * 1000)
+    
+    # Return the results
+    return jsonify({
+        "order_weight": order_weight,
+        "chickens_needed": chickens_needed,
+        "remaining_inventory": remaining_inventory,
+        "remaining_inventory_weight": remaining_inventory_weight
+    })
+
+if _name_ == '_main_':
+    app.run(debug=True)
