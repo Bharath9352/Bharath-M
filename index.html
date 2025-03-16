@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharath | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">My Portfolio</div>
+    <div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">My Portfolio</div> 
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+      <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="img/profile.png" alt="Bharath profile picture">
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Bharath M</h1>
+      <p class="section__text__p2">Frontend Developer | Desinger</p>
+      <div class="btn-container">
+      <button class="btn btn-color-2" onclick="window.open('./img/resume.pdf', '_blank')" >Download CV</button>
+      <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+      </div>
+      <div id="socials-container">
+        <img src="./img/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/bharath-m-1327b9220'">
+        <img src="./img/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/Bharath9352'">
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="img/about.jpg" alt="Profile picture" class="about-pic"/>
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="img/internship.png" alt="internship icon" class="icon"/>
+            <h3>Internship</h3>
+            <p>Litz Tech India Pvt LTD <br />Mobile App Development using Flutter</p>
+          </div>
+          <div class="details-container">
+            <img src="img/graduation.png" alt="Education icon" class="icon"/>
+            <h3>Education</h3>
+            <p>Sri Ramakrishna Institute of Technology<br />B.E - Computer Science</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>I am a recent graduate in Computer Science with a strong foundation in programming, algorithms, and software development. I am passionate about leveraging technology to solve real-world problems and have hands-on experience with languages like Java as well as web technologies like HTML, CSS, Bootstrap, SQL and Ms Excel. I enjoy working on projects that challenge my creativity and technical skills, and I am eager to continue learning and growing in the tech industry. I am currently seeking opportunities where I can contribute to impactful projects and develop my expertise further.</p>
+        </div>
+      </div>
+    </div>
+    <img src="img/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#skills'"/>
+  </section>
+  <section id="skills">
+    <div>
+    <p class="section_text_p1">Explore My</p>
+    <h1 class="title">Skills</h1>
+  </div>
+    <div class="grid-container">
+      <div class="skillcard-list">
+        <article class="skillcard">
+          <figure class="skillcard-image">
+            <img src="img/java.jpg" alt="java logo" />
+          </figure>
+          <div class="skillcard-header">
+            <p>Java</p>
+          </div>
+        </article>
+      </div>
+      <div class="skillcard-list">
+        <article class="skillcard">
+          <figure class="skillcard-image">
+            <img src="img/Html.png" alt="HTML logo" />
+          </figure>
+          <div class="skillcard-header">
+            <p>HTML</p>
+          </div>
+        </article>
+      </div>
+      <div class="skillcard-list">
+        <article class="skillcard">
+          <figure class="skillcard-image">
+            <img src="img/css.png" alt="Css logo" />
+          </figure>
+          <div class="skillcard-header">
+            <p>CSS</p>
+          </div>
+        </article>
+      </div>
+      <div class="skillcard-list">
+        <article class="skillcard">
+          <figure class="skillcard-image">
+            <img src="img/Bootstrap.png" alt="Bootstrap logo" />
+          </figure>
+          <div class="skillcard-header">
+            <p>Bootstrap</p>
+          </div>
+        </article>
+      </div>
+      <div class="skillcard-list">
+        <article class="skillcard">
+          <figure class="skillcard-image">
+            <img src="img/SQL.png" alt="SQL logo" />
+          </figure>
+          <div class="skillcard-header">
+            <p>SQL</p>
+          </div>
+        </article>
+      </div>
+      <div class="skillcard-list">
+        <article class="skillcard">
+          <figure class="skillcard-image">
+            <img src="img/excel.png" alt="Excel logo" />
+          </figure>
+          <div class="skillcard-header">
+            <p>Excel</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="arrow-container">
+      <img src="img/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+    </div>
+</section>
+<section id="contact">
+  <p class="section__text__p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+  <div class="contact-info-upper-container">
+    <div class="contact-info-container">
+      <img
+        src="img/email.png"
+        alt="Email icon"
+        class="icon contact-icon email-icon"
+      />
+      <p><a href="mailto:examplemail@gmail.com">bharathm2129@gmail.com</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img
+        src="img/linkedin.png"
+        alt="LinkedIn icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://www.linkedin.com/in/bharath-m-1327b9220">LinkedIn</a></p>
+    </div>
+  </div>
+</section>
+<footer>
+  <nav>
+    <div class="nav-links-container">
+      <ul class="nav-links">
+        <li><a href="#profile">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <p>Copyright &#169; 2025 Bharath. All Rights Reserved.</p>
+</footer>
+  <script src="script/script.js"></script>
+</body>
+</html>
